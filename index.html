@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Charlie's Kustoms - Taller especializado en personalización y mantenimiento de vehículos. Ofrecemos servicios premium y productos de alta calidad.">
+    <meta name="keywords" content="personalización vehículos, tuning, modificación autos, Charlie's Kustoms, accesorios automóviles">
+    <meta name="author" content="Charlie's Kustoms">
+    <title>Charlie's Kustoms | Personalización y Mantenimiento de Vehículos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon.ico-Z70anBtdNIF4rUG67HtGhyfNc1VSVw.ico" type="image/x-icon">
+    <!-- Calendario para reservas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- Three.js para visualizador 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250217-WA0021.jpg-Z70anBtdNIF4rUG67HtGhyfNc1VSVw.jpeg" alt="Charlie's Kustoms Logo">
+                    <h1>Charlie's Kustoms</h1>
+                </div>
+                <div class="hamburger" aria-label="Menú de navegación">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#citas">Reservar Cita</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li>
+                        <button id="cart-button" aria-label="Ver carrito de compras">
+                            <i class="fas fa-shopping-cart"></i> Carrito <span id="cart-count">0</span>
+                        </button>
+                    </li>
+                </ul>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Buscar productos..." aria-label="Buscar productos">
+                        <button id="search-button" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                        <div id="autocomplete-list" role="listbox"></div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Transforma Tu Vehículo</h2>
+                    <p>En Charlie's Kustoms nos especializamos en llevar tu auto al siguiente nivel con personalización de alta calidad y servicios premium.</p>
+                    <div class="hero-buttons">
+                        <a href="#servicios" class="btn btn-primary">Nuestros Servicios</a>
+                        <a href="#citas" class="btn btn-secondary">Reservar Cita</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="section">
+            <div class="container">
+                <h2>Nuestros Servicios</h2>
+                <p class="section-description">Ofrecemos servicios profesionales para personalizar y mantener tu vehículo con los más altos estándares de calidad.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Personalización de Vehículos</h3>
+                        <ul>
+                            <li>Modificaciones estéticas</li>
+                            <li>Pintura personalizada</li>
+                            <li>Instalación de accesorios</li>
+                            <li>Wrapping profesional</li>
+                        </ul>
+                        <p>Precio: Desde $500</p>
+                        <a href="#citas" class="btn">Solicitar Presupuesto</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Mantenimiento Premium</h3>
+                        <ul>
+                            <li>Diagnóstico computarizado</li>
+                            <li>Afinación de motor</li>
+                            <li>Sistemas de alto rendimiento</li>
+                            <li>Mantenimiento preventivo</li>
+                        </ul>
+                        <p>Precio: Desde $200</p>
+                        <a href="#citas" class="btn">Solicitar Presupuesto</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Restauración Completa</h3>
+                        <ul>
+                            <li>Restauración de clásicos</li>
+                            <li>Reconstrucción de motor</li>
+                            <li>Renovación de interiores</li>
+                            <li>Actualización de sistemas</li>
+                        </ul>
+                        <p>Precio: A consultar</p>
+                        <a href="#citas" class="btn">Solicitar Presupuesto</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Mejoras de Rendimiento</h3>
+                        <ul>
+                            <li>Reprogramación de ECU</li>
+                            <li>Instalación de turbos</li>
+                            <li>Sistemas de admisión</li>
+                            <li>Mejoras de potencia</li>
+                        </ul>
+                        <p>Precio: Desde $350</p>
+                        <a href="#citas" class="btn">Solicitar Presupuesto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="productos" class="section">
+            <div class="container">
+                <h2>Productos Destacados</h2>
+                <p class="section-description">Ofrecemos los mejores productos del mercado para personalizar y mejorar el rendimiento de tu vehículo.</p>
+                <div class="category-filter">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="exterior">Exterior</button>
+                    <button class="filter-btn" data-filter="interior">Interior</button>
+                    <button class="filter-btn" data-filter="rendimiento">Rendimiento</button>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card" data-category="exterior">
+                        <div class="product-badge">Destacado</div>
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Kit de Personalización">
+                        <h3>Kit de Personalización Premium</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5/5)</span>
+                        </div>
+                        <ul>
+                            <li>Spoilers deportivos</li>
+                            <li>Luces LED personalizadas</li>
+                            <li>Vinilos de alta calidad</li>
+                            <li>Accesorios exclusivos</li>
+                        </ul>
+                        <p class="price">$899.99</p>
+                        <button class="btn view-3d-button" data-product="kit-personalizacion">
+                            <i class="fas fa-cube"></i> Ver en 3D
+                        </button>
+                        <button class="btn add-to-cart" data-id="1" data-name="Kit de Personalización Premium" data-price="899.99">
+                            <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                        </button>
+                    </div>
+                    <div class="product-card" data-category="interior">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sistema de Sonido">
+                        <h3>Sistema de Sonido Profesional</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5/5)</span>
+                        </div>
+                        <ul>
+                            <li>Amplificador de alta potencia</li>
+                            <li>Subwoofer premium</li>
+                            <li>Altavoces de calidad superior</li>
+                            <li>Kit de instalación completo</li>
+                        </ul>
+                        <p class="price">$1,299.99</p>
+                        <button class="btn view-3d-button" data-product="sistema-sonido">
+                            <i class="fas fa-cube"></i> Ver en 3D
+                        </button>
+                        <button class="btn add-to-cart" data-id="2" data-name="Sistema de Sonido Profesional" data-price="1299.99">
+                            <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                        </button>
+                    </div>
+                    <div class="product-card" data-category="exterior">
+                        <img src="https://images.unsplash.com/photo-1611921059132-d3812f97873b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Rines Deportivos">
+                        <h3>Set de Rines Deportivos</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4/5)</span>
+                        </div>
+                        <ul>
+                            <li>Aleación ligera premium</li>
+                            <li>Diseño exclusivo</li>
+                            <li>Incluye neumáticos deportivos</li>
+                            <li>Instalación profesional</li>
+                        </ul>
+                        <p class="price">$2,499.99</p>
+                        <button class="btn view-3d-button" data-product="rines-deportivos">
+                            <i class="fas fa-cube"></i> Ver en 3D
+                        </button>
+                        <button class="btn add-to-cart" data-id="3" data-name="Set de Rines Deportivos" data-price="2499.99">
+                            <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                        </button>
+                    </div>
+                    <div class="product-card" data-category="rendimiento">
+                        <div class="product-badge">Oferta</div>
+                        <img src="https://images.unsplash.com/photo-1600661653561-629509216228?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Kit de Suspensión">
+                        <h3>Kit de Suspensión Deportiva</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5/5)</span>
+                        </div>
+                        <ul>
+                            <li>Amortiguadores de alto rendimiento</li>
+                            <li>Muelles deportivos</li>
+                            <li>Barras estabilizadoras</li>
+                            <li>Instalación incluida</li>
+                        </ul>
+                        <p class="price"><span class="original-price">$1,999.99</span> $1,799.99</p>
+                        <button class="btn view-3d-button" data-product="suspension-deportiva">
+                            <i class="fas fa-cube"></i> Ver en 3D
+                        </button>
+                        <button class="btn add-to-cart" data-id="4" data-name="Kit de Suspensión Deportiva" data-price="1799.99">
+                            <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                        </button>
+                    </div>
+                    <div class="product-card" data-category="rendimiento">
+                        <img src="https://images.unsplash.com/photo-1603784022406-a47eb1a4cf23?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sistema de Escape">
+                        <h3>Sistema de Escape Deportivo</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(4/5)</span>
+                        </div>
+                        <ul>
+                            <li>Acero inoxidable de alta calidad</li>
+                            <li>Diseño de alto flujo</li>
+                            <li>Sonido deportivo mejorado</li>
+                            <li>Incluye instalación</li>
+                        </ul>
+                        <p class="price">$1,499.99</p>
+                        <button class="btn view-3d-button" data-product="escape-deportivo">
+                            <i class="fas fa-cube"></i> Ver en 3D
+                        </button>
+                        <button class="btn add-to-cart" data-id="5" data-name="Sistema de Escape Deportivo" data-price="1499.99">
+                            <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                        </button>
+                    </div>
+                    <div class="product-card" data-category="rendimiento">
+                        <img src="https://images.unsplash.com/photo-1600661653397-777d40882b23?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Kit de Frenos">
+                        <h3>Kit de Frenos de Alto Rendimiento</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5/5)</span>
+                        </div>
+                        <ul>
+                            <li>Discos de freno perforados</li>
+                            <li>Pastillas de freno de competición</li>
+                            <li>Latiguillos metálicos</li>
+                            <li>Líquido de frenos de alta temperatura</li>
+                        </ul>
+                        <p class="price">$2,199.99</p>
+                        <button class="btn view-3d-button" data-product="frenos-alto-rendimiento">
+                            <i class="fas fa-cube"></i> Ver en 3D
+                        </button>
+                        <button class="btn add-to-cart" data-id="6" data-name="Kit de Frenos de Alto Rendimiento" data-price="2199.99">
+                            <i class="fas fa-cart-plus"></i> Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+                <div class="view-all-container">
+                    <a href="#" class="btn btn-secondary">Ver todos los productos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Visualizador 3D -->
+        <div id="product-3d-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="product-3d-title">Visualizador 3D</h2>
+                <div class="product-3d-viewer">
+                    <canvas id="product-3d-canvas"></canvas>
+                </div>
+                <div class="product-3d-controls">
+                    <button class="btn" id="rotate-left"><i class="fas fa-undo"></i> Rotar Izquierda</button>
+                    <button class="btn" id="rotate-right"><i class="fas fa-redo"></i> Rotar Derecha</button>
+                    <button class="btn" id="view-ar"><i class="fas fa-vr-cardboard"></i> Ver en RA</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Realidad Aumentada -->
+        <div id="ar-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Visualizador de Realidad Aumentada</h2>
+                <p>Apunta tu cámara a una superficie plana para visualizar el producto en tu espacio.</p>
+                <div class="ar-viewer">
+                    <video id="ar-video" autoplay playsinline></video>
+                    <div class="ar-overlay" id="ar-overlay"></div>
+                    <div class="ar-controls">
+                        <button class="ar-button" id="ar-rotate"><i class="fas fa-sync-alt"></i> Rotar</button>
+                        <button class="ar-button" id="ar-scale-up"><i class="fas fa-search-plus"></i> Aumentar</button>
+                        <button class="ar-button" id="ar-scale-down"><i class="fas fa-search-minus"></i> Reducir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="galeria" class="section">
+            <div class="container">
+                <h2>Galería de Trabajos</h2>
+                <p class="section-description">Explora algunos de nuestros mejores trabajos de personalización y restauración.</p>
+                <div class="gallery-filter">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="personalizacion">Personalización</button>
+                    <button class="filter-btn" data-filter="restauracion">Restauración</button>
+                    <button class="filter-btn" data-filter="rendimiento">Rendimiento</button>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="personalizacion">
+                        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Personalización de Mustang">
+                        <div class="gallery-overlay">
+                            <h3>Personalización de Mustang</h3>
+                            <p>Wrapping completo y modificaciones estéticas</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="restauracion">
+                        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Restauración de Clásico">
+                        <div class="gallery-overlay">
+                            <h3>Restauración de Clásico</h3>
+                            <p>Restauración completa de un clásico de los 60s</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="rendimiento">
+                        <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Mejora de Rendimiento">
+                        <div class="gallery-overlay">
+                            <h3>Mejora de Rendimiento</h3>
+                            <p>Instalación de turbo y reprogramación</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="personalizacion">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Personalización Interior">
+                        <div class="gallery-overlay">
+                            <h3>Personalización Interior</h3>
+                            <p>Renovación completa del interior</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="restauracion">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Restauración Deportivo">
+                        <div class="gallery-overlay">
+                            <h3>Restauración Deportivo</h3>
+                            <p>Restauración y mejora de deportivo clásico</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="rendimiento">
+                        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sistema de Escape">
+                        <div class="gallery-overlay">
+                            <h3>Sistema de Escape</h3>
+                            <p>Instalación de sistema de escape deportivo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sistema de Reserva de Citas -->
+        <section id="citas" class="section appointment-section">
+            <div class="container">
+                <h2>Reserva tu Cita</h2>
+                <p class="section-description">Programa una cita con nuestros especialistas para discutir tu proyecto o servicio.</p>
+                <div class="appointment-container">
+                    <div class="appointment-form">
+                        <h3>Información de Contacto</h3>
+                        <form id="appointment-form">
+                            <div class="form-group">
+                                <label for="appointment-name">Nombre Completo</label>
+                                <input type="text" id="appointment-name" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-email">Email</label>
+                                <input type="email" id="appointment-email" placeholder="Tu email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-phone">Teléfono</label>
+                                <input type="tel" id="appointment-phone" placeholder="Tu teléfono" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-service">Servicio</label>
+                                <select id="appointment-service" required>
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="personalizacion">Personalización de Vehículo</option>
+                                    <option value="mantenimiento">Mantenimiento Premium</option>
+                                    <option value="restauracion">Restauración Completa</option>
+                                    <option value="rendimiento">Mejoras de Rendimiento</option>
+                                    <option value="diagnostico">Diagnóstico</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-vehicle">Vehículo</label>
+                                <input type="text" id="appointment-vehicle" placeholder="Marca, modelo y año" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-notes">Notas adicionales</label>
+                                <textarea id="appointment-notes" placeholder="Describe brevemente tu proyecto o necesidad"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="appointment-calendar">
+                        <h3>Selecciona Fecha y Hora</h3>
+                        <div class="form-group">
+                            <label for="appointment-date">Fecha</label>
+                            <input type="text" id="appointment-date" placeholder="Selecciona una fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Horarios Disponibles</label>
+                            <div class="time-slots" id="time-slots">
+                                <!-- Los horarios se generarán dinámicamente con JavaScript -->
+                            </div>
+                        </div>
+                        <button type="submit" class="btn" id="submit-appointment">Reservar Cita</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculadora de Presupuesto -->
+        <section id="calculadora" class="section">
+            <div class="container">
+                <h2>Calculadora de Presupuesto</h2>
+                <p class="section-description">Obtén un presupuesto estimado para tu proyecto de personalización.</p>
+                <div class="budget-calculator">
+                    <form id="calculator-form" class="calculator-form">
+                        <div class="form-group">
+                            <label for="vehicle-type">Tipo de Vehículo</label>
+                            <select id="vehicle-type" required>
+                                <option value="">Selecciona un tipo</option>
+                                <option value="sedan">Sedán</option>
+                                <option value="suv">SUV</option>
+                                <option value="pickup">Pickup</option>
+                                <option value="deportivo">Deportivo</option>
+                                <option value="clasico">Clásico</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Servicios</label>
+                            <div class="calculator-options">
+                                <div class="calculator-option">
+                                    <input type="checkbox" id="service-wrapping" data-price="800">
+                                    <label for="service-wrapping">Wrapping Completo</label>
+                                </div>
+                                <div class="calculator-option">
+                                    <input type="checkbox" id="service-paint" data-price="1200">
+                                    <label for="service-paint">Pintura Personalizada</label>
+                                </div>
+                                <div class="calculator-option">
+                                    <input type="checkbox" id="service-rims" data-price="2000">
+                                    <label for="service-rims">Rines Deportivos</label>
+                                </div>
+                                <div class="calculator-option">
+                                    <input type="checkbox" id="service-suspension" data-price="1500">
+                                    <label for="service-suspension">Suspensión Deportiva</label>
+                                </div>
+                                <div class="calculator-option">
+                                    <input type="checkbox" id="service-exhaust" data-price="1200">
+                                    <label for="service-exhaust">Sistema de Escape</label>
+                                </div>
+                                <div class="calculator-option">
+                                    <input type="checkbox" id="service-interior" data-price="1800">
+                                    <label for="service-interior">Personalización Interior</label>
+                                </div>
+                                <div class="calculator-option">
+                                    <input type="checkbox" id="service-sound" data-price="1000">
+                                    <label for="service-sound">Sistema de Sonido</label>
+                                </div>
+                                <div class="calculator-option">
+                                    <input type="checkbox" id="service-performance" data-price="2500">
+                                    <label for="service-performance">Mejora de Rendimiento</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn" id="calculate-budget">Calcular Presupuesto</button>
+                        <div class="calculator-result" id="calculator-result" style="display: none;">
+                            <h3>Presupuesto Estimado</h3>
+                            <div class="calculator-price" id="calculator-price">$0.00</div>
+                            <p>Este es un presupuesto estimado. Para un presupuesto detallado, <a href="#citas">reserva una cita</a> con nuestros especialistas.</p>
+                            <div class="calculator-details" id="calculator-details">
+                                <!-- Los detalles se generarán dinámicamente con JavaScript -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonios" class="section">
+            <div class="container">
+                <h2>Testimonios de Clientes</h2>
+                <p class="section-description">Lo que nuestros clientes dicen sobre nuestros servicios y productos.</p>
+                <div class="testimonials-slider">
+                    <div class="testimonial">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Increíble trabajo en la personalización de mi auto. El equipo de Charlie's Kustoms superó todas mis expectativas. El acabado es perfecto y el servicio fue excelente desde el principio hasta el final."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Miguel Ángel R.">
+                            <div>
+                                <p class="author-name">Miguel Ángel R.</p>
+                                <p class="author-car">Propietario de Honda Civic</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"La calidad de los productos y el servicio es excepcional. Definitivamente el mejor taller de customización en la ciudad. Han transformado mi vehículo completamente y ahora es único. Muy recomendable."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Laura S.">
+                            <div>
+                                <p class="author-name">Laura S.</p>
+                                <p class="author-car">Propietaria de Mazda 3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Llevé mi coche para una mejora de rendimiento y quedé impresionado con el resultado. La potencia aumentó considerablemente y el sonido del motor es ahora mucho más deportivo. Profesionales de primera."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Carlos M.">
+                            <div>
+                                <p class="author-name">Carlos M.</p>
+                                <p class="author-car">Propietario de Volkswagen GTI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button id="prev-testimonial" aria-label="Testimonio anterior"><i class="fas fa-chevron-left"></i></button>
+                    <button id="next-testimonial" aria-label="Testimonio siguiente"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <form id="comment-form" class="comment-form">
+                    <h3>Deja tu comentario</h3>
+                    <div class="form-group">
+                        <label for="comment-name">Nombre</label>
+                        <input type="text" id="comment-name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-email">Email</label>
+                        <input type="email" id="comment-email" placeholder="Tu email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-rating">Calificación</label>
+                        <div class="rating-select">
+                            <i class="far fa-star" data-rating="1"></i>
+                            <i class="far fa-star" data-rating="2"></i>
+                            <i class="far fa-star" data-rating="3"></i>
+                            <i class="far fa-star" data-rating="4"></i>
+                            <i class="far fa-star" data-rating="5"></i>
+                        </div>
+                        <input type="hidden" id="comment-rating" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-text">Comentario</label>
+                        <textarea id="comment-text" placeholder="Tu comentario" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Comentario</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p class="section-description">Estamos aquí para ayudarte. Contáctanos para cualquier consulta o para programar una cita.</p>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Ubicación</h3>
+                                <p>Av 99 Ote, colonia Arboledas de Loma Bella</p>
+                                <p>Puebla, Pue., México</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Teléfono</h3>
+                                <p><a href="tel:+542431009489">+54 243 100 9489</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p><a href="mailto:cesarmn2081@gmail.com">cesarmn2081@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Horario</h3>
+                                <p>Lunes a Viernes: 9:00 AM - 7:00 PM</p>
+                                <p>Sábados: 10:00 AM - 3:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="social-media">
+                            <h3>Síguenos</h3>
+                            <div class="social-icons">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                                <a href="https://wa.me/542431009489" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="Tu email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" placeholder="Tu teléfono">
+                            </div>
+                            <div class="form-group">
+                                <label for="servicio">Servicio de interés</label>
+                                <select id="servicio">
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="personalizacion">Personalización</option>
+                                    <option value="mantenimiento">Mantenimiento</option>
+                                    <option value="restauracion">Restauración</option>
+                                    <option value="rendimiento">Mejoras de Rendimiento</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" placeholder="Tu mensaje" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <h3>Encuéntranos</h3>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8234567890123!2d-98.2063!3d19.0414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc0a5b5b5b5b5%3A0x5b5b5b5b5b5b5b5b!2sAv%2099%20Ote%2C%20Arboledas%20de%20Loma%20Bella%2C%20Puebla%2C%20Pue.%2C%20M%C3%A9xico!5e0!3m2!1ses-419!2smx!4v1620164418267!5m2!1ses-419!2smx" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="section newsletter-section">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Suscríbete a nuestro Newsletter</h2>
+                    <p>Recibe las últimas novedades, ofertas exclusivas y consejos para el mantenimiento de tu vehículo.</p>
+                    <form id="newsletter-form" class="newsletter-form">
+                        <input type="email" placeholder="Tu email" required>
+                        <button type="submit" class="btn">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chat de Voz en Vivo -->
+    <div class="voice-chat">
+        <div class="voice-chat-button" id="voice-chat-button">
+            <i class="fas fa-microphone"></i>
+        </div>
+    </div>
+
+    <div class="voice-chat-modal" id="voice-chat-modal">
+        <div class="voice-chat-header">
+            <h3>Chat de Voz en Vivo</h3>
+            <div class="voice-chat-close" id="voice-chat-close"><i class="fas fa-times"></i></div>
+        </div>
+        <div class="voice-chat-body">
+            <div class="voice-chat-messages" id="voice-chat-messages">
+                <div class="voice-message assistant">
+                    <p>¡Hola! Soy el asistente virtual de Charlie's Kustoms. ¿En qué puedo ayudarte hoy? Puedes hablar o escribir tu consulta.</p>
+                </div>
+            </div>
+        </div>
+        <div class="voice-chat-controls">
+            <button class="voice-record-button" id="voice-record-button">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <div class="voice-status" id="voice-status">Presiona para hablar</div>
+        </div>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items-container">
+                <div id="cart-items"></div>
+                <div id="cart-summary">
+                    <div class="cart-row">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">$0.00</span>
+                    </div>
+                    <div class="cart-row">
+                        <span>IVA (16%):</span>
+                        <span id="cart-tax">$0.00</span>
+                    </div>
+                    <div class="cart-row total">
+                        <span>Total:</span>
+                        <span id="cart-total">$0.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-buttons">
+                <button id="continue-shopping" class="btn btn-secondary">Seguir Comprando</button>
+                <button id="checkout-btn" class="btn">Realizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery-modal" class="modal">
+        <div class="modal-content gallery-modal-content">
+            <span class="close">&times;</span>
+            <img id="gallery-modal-img" src="/placeholder.svg" alt="Imagen ampliada">
+            <div class="gallery-modal-nav">
+                <button id="gallery-prev" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
+                <button id="gallery-next" aria-label="Imagen siguiente"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="whatsapp-button" class="whatsapp-button">
+        <a href="https://wa.me/542431009489" target="_blank" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20250217-WA0021.jpg-Z70anBtdNIF4rUG67HtGhyfNc1VSVw.jpeg" alt="Charlie's Kustoms Logo">
+                    <h2>Charlie's Kustoms</h2>
+                    <p>Transformando vehículos, creando experiencias.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#citas">Reservar Cita</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#servicios">Personalización</a></li>
+                        <li><a href="#servicios">Mantenimiento</a></li>
+                        <li><a href="#servicios">Restauración</a></li>
+                        <li><a href="#servicios">Mejoras de Rendimiento</a></li>
+                        <li><a href="#servicios">Diagnóstico</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av 99 Ote, Arboledas de Loma Bella, Puebla</p>
+                    <p><i class="fas fa-phone"></i> +54 243 100 9489</p>
+                    <p><i class="fas fa-envelope"></i> cesarmn2081@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Charlie's Kustoms. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
